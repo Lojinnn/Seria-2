@@ -1,0 +1,278 @@
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\loj\2 Seria\bin\Debug\2 Seria.exe, файл: c:\program files\codeblocks\mingw\include\txlib.h, строка: 14346, функция: intptr_t {anonymous}::TX::txPlayVideo(int, int, int, int, const char*, double, double, HWND),
+
+Сообщение: Возможно, окно рисования не создано или не в порядке.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x005062FC (32-bit), Flags: CMdre0, Thread: 0x68C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00426E13 in D:\loj\2 Seria\bin\Debug\2 Seria.exe: (anonymous namespace)::TX::txPlayVideo() at c:/program files/codeblocks/mingw/include/txlib.h (14346)
+# 1 0x00427FC2 in D:\loj\2 Seria\bin\Debug\2 Seria.exe: (anonymous namespace)::TX::txPlayVideo() at c:/program files/codeblocks/mingw/include/txlib.h (14498)
+# 2 0x00405787 in D:\loj\2 Seria\bin\Debug\2 Seria.exe: (anonymous namespace)::TX::_txCleanup() at c:/program files/codeblocks/mingw/include/txlib.h (9116)
+# 3 0x0040499A in D:\loj\2 Seria\bin\Debug\2 Seria.exe: (anonymous namespace)::TX::_txOnCExit() at c:/program files/codeblocks/mingw/include/txlib.h (8925)
+# 4 0x00401284 in D:\loj\2 Seria\bin\Debug\2 Seria.exe: __mingw_CRTStartup()
+# 5 0x004012C5 in D:\loj\2 Seria\bin\Debug\2 Seria.exe: WinMainCRTStartup()
+# 6 0x779380CE in C:\Windows\SYSTEM32\ntdll.dll: RtlGetAppContainerNamedObjectPath()
+# 7 0x7793809E in C:\Windows\SYSTEM32\ntdll.dll: RtlGetAppContainerNamedObjectPath()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in intptr_t {anonymous}::TX::txPlayVideo(int, int, int, int, const char*, double, double, HWND) at c:\program files\codeblocks\mingw\include\txlib.h:14346:
+
+  14344:                       double zoom /*= 0*/, double gain /*= 1*/, HWND wnd /*= txWindow()*/)
+  14345:     {
+=>14346: $1  if (wnd && wnd == txWindow() && _TX_TXWINDOW_FAILED()) return -1;
+  14347: 
+  14348: $   int time = GetTickCount();  //-V2551
+
+# 1 in intptr_t {anonymous}::TX::txPlayVideo(const char*, double, double, HWND) at c:\program files\codeblocks\mingw\include\txlib.h:14498:
+
+  14496: intptr_t txPlayVideo (const char fileName[], double zoom /*= 0*/, double gain /*= 0*/, HWND wnd /*= txWindow()*/)
+  14497:     {
+=>14498: $1  return txPlayVideo (0, 0, 0, 0, fileName, zoom, gain, wnd);
+  14499:     }
+  14500: 
+
+# 2 in void {anonymous}::TX::_txCleanup() at c:\program files\codeblocks\mingw\include\txlib.h:9116:
+
+   9114: 
+   9115: $   txSpeak     (NULL);
+=> 9116: $   txPlayVideo (NULL);
+   9117: 
+   9118: $   delete _txCanvas_UserDCs;
+
+# 3 in void {anonymous}::TX::_txOnCExit() at c:\program files\codeblocks\mingw\include\txlib.h:8925:
+
+   8923:     OutputDebugString ("\n");
+   8924: 
+=> 8925: $5  _txCleanup();
+   8926: 
+   8927:     _TX_CALLv (Win32::_cexit, ());
+
+# 4 in int main() at D:\loj\2 Seria\main.cpp:70:
+
+     68: 
+     69: 
+=>   70:     txTextCursor (false);
+     71:     return 0;
+     72:     }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\program files\codeblocks\mingw\include\txlib.h
+Compiled:	Oct  3 2024 18:12:09, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 03 2024 18:12:15
+
+Run file:	D:\loj\2 Seria\bin\Debug\2 Seria.exe
+Directory:	D:\loj\2 Seria
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: D:\loj\2 Seria\bin\Debug\2 Seria.exe, файл: c:\program files\codeblocks\mingw\include\txlib.h, строка: 13490, функция: bool {anonymous}::TX::txDrawText(double, double, double, double, const char*, unsigned int, HDC),
+
+Сообщение: Параметр y0 = 630 больше, чем y1 = 470. Текст выводиться не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x005092FC (32-bit), Flags: CMdRe0, Thread: 0x41DC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00420904 in D:\loj\2 Seria\bin\Debug\2 Seria.exe: (anonymous namespace)::TX::txDrawText() at c:/program files/codeblocks/mingw/include/txlib.h (13490)
+
+# 1 0x0042E3B6 in D:\loj\2 Seria\bin\Debug\2 Seria.exe: pekarna() at D:/loj/2 Seria/main.cpp (249):
+
+    247:     txSelectFont ("Arial", 20, 0, FW_BOLD);
+    248:     txDrawText   (x+80, y+30, x+215, x+70, "Вкусные\n"
+=>  249:                                         "булочки");
+    250: 
+    251:     txSetColor(TX_WHITE, 7);
+
+# 2 0x0042EA05 in D:\loj\2 Seria\bin\Debug\2 Seria.exe: main() at D:/loj/2 Seria/main.cpp (890):
+
+    888:         txRectangle(600, 550, 1000, 1000);
+    889: 
+=>  890:         pekarna(400, 600);
+    891: 
+    892:         carl(e, 500);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txDrawText(double, double, double, double, const char*, unsigned int, HDC) at c:\program files\codeblocks\mingw\include\txlib.h:13490:
+
+  13488:         {
+  13489: $       SetLastError (ERROR_INVALID_DATA);
+=>13490: $       TX_ERROR ("Параметр y0 = %g больше, чем y1 = %g. Текст выводиться не будет.", y0, y1);
+  13491:         }
+  13492: 
+
+# 1 in void pekarna(int, int) at D:\loj\2 Seria\main.cpp:249:
+
+    247:     txSelectFont ("Arial", 20, 0, FW_BOLD);
+    248:     txDrawText   (x+80, y+30, x+215, x+70, "Вкусные\n"
+=>  249:                                         "булочки");
+    250: 
+    251:     txSetColor(TX_WHITE, 7);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\program files\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 17 2024 19:03:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 17 2024 19:03:37
+
+Run file:	D:\loj\2 Seria\bin\Debug\2 Seria.exe
+Directory:	D:\loj\2 Seria
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: D:\loj\2 Seria\bin\Debug\2 Seria.exe, файл: c:\program files\codeblocks\mingw\include\txlib.h, строка: 13490, функция: bool {anonymous}::TX::txDrawText(double, double, double, double, const char*, unsigned int, HDC),
+
+Сообщение: Параметр y0 = 630 больше, чем y1 = 470. Текст выводиться не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x005092FC (32-bit), Flags: CMdRe0, Thread: 0xE30 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00420904 in D:\loj\2 Seria\bin\Debug\2 Seria.exe: (anonymous namespace)::TX::txDrawText() at c:/program files/codeblocks/mingw/include/txlib.h (13490)
+
+# 1 0x0042E3B6 in D:\loj\2 Seria\bin\Debug\2 Seria.exe: pekarna() at D:/loj/2 Seria/main.cpp (249):
+
+    247:     txSelectFont ("Arial", 20, 0, FW_BOLD);
+    248:     txDrawText   (x+80, y+30, x+215, x+70, "Вкусные\n"
+=>  249:                                         "булочки");
+    250: 
+    251:     txSetColor(TX_WHITE, 7);
+
+# 2 0x0042EA05 in D:\loj\2 Seria\bin\Debug\2 Seria.exe: main() at D:/loj/2 Seria/main.cpp (890):
+
+    888:         txRectangle(600, 550, 1000, 1000);
+    889: 
+=>  890:         pekarna(400, 600);
+    891: 
+    892:         carl(e, 500);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txDrawText(double, double, double, double, const char*, unsigned int, HDC) at c:\program files\codeblocks\mingw\include\txlib.h:13490:
+
+  13488:         {
+  13489: $       SetLastError (ERROR_INVALID_DATA);
+=>13490: $       TX_ERROR ("Параметр y0 = %g больше, чем y1 = %g. Текст выводиться не будет.", y0, y1);
+  13491:         }
+  13492: 
+
+# 1 in void pekarna(int, int) at D:\loj\2 Seria\main.cpp:249:
+
+    247:     txSelectFont ("Arial", 20, 0, FW_BOLD);
+    248:     txDrawText   (x+80, y+30, x+215, x+70, "Вкусные\n"
+=>  249:                                         "булочки");
+    250: 
+    251:     txSetColor(TX_WHITE, 7);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\program files\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 17 2024 19:04:11, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 17 2024 19:04:18
+
+Run file:	D:\loj\2 Seria\bin\Debug\2 Seria.exe
+Directory:	D:\loj\2 Seria
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: D:\loj\2 Seria\bin\Debug\2 Seria.exe, файл: c:\program files\codeblocks\mingw\include\txlib.h, строка: 9223, функция: int {anonymous}::TX::txPause(const char*, ...),
+
+Сообщение: Похоже, программа зависла :(
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x0050F2FC (32-bit), Flags: CMdre0, Thread: 0x1B28 (Canvas). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00406472 in D:\loj\2 Seria\bin\Debug\2 Seria.exe: (anonymous namespace)::TX::txPause() at c:/program files/codeblocks/mingw/include/txlib.h (9223)
+# 1 0x0040559C in D:\loj\2 Seria\bin\Debug\2 Seria.exe: (anonymous namespace)::TX::_txCleanup() at c:/program files/codeblocks/mingw/include/txlib.h (9101)
+# 2 0x0040A3FF in D:\loj\2 Seria\bin\Debug\2 Seria.exe: (anonymous namespace)::TX::_txCanvas_ThreadProc() at c:/program files/codeblocks/mingw/include/txlib.h (9852)
+# 3 0x75C26CFF in C:\Windows\System32\msvcrt.dll: beginthreadex()
+# 4 0x75C26DC1 in C:\Windows\System32\msvcrt.dll: endthreadex()
+# 5 0x769DFCC9 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+# 6 0x7772809E in C:\Windows\SYSTEM32\ntdll.dll: RtlGetAppContainerNamedObjectPath()
+# 7 0x7772806E in C:\Windows\SYSTEM32\ntdll.dll: RtlGetAppContainerNamedObjectPath()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int {anonymous}::TX::txPause(const char*, ...) at c:\program files\codeblocks\mingw\include\txlib.h:9223:
+
+   9221: 
+   9222:         if (_TX_CALL (Win32::GhostWindowFromHungWindow, (canvas)))
+=> 9223:             {$ TX_ERROR ("Похоже, программа зависла :("); break; }
+   9224: 
+   9225:         if (canvas && _TX_CALL (Win32::IsHungAppWindow, (canvas)))
+
+# 1 in void {anonymous}::TX::_txCleanup() at c:\program files\codeblocks\mingw\include\txlib.h:9100:
+
+   9098: $       if (console && isParentWaitable >= 0)
+   9099:             {
+=> 9100: $           txPause ((_txErrors)?               "\f\n" "[Press F to Pay Respects...]" :
+   9101:                      (!canvas && _txIsTTY (0))? "\f\n" "[Нажмите любую клавишу для завершения]" : "\f");
+   9102: 
+
+# 2 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at c:\program files\codeblocks\mingw\include\txlib.h:9852:
+
+   9850: $   if (_txRunning && _txMain)         // Main window is destroyed but main() is still running.
+   9851:         {                              // No chances for good termination, so use exit().
+=> 9852: $       _txCleanup();
+   9853: $       ::exit ((int) msg.wParam);     //-V202 //-V2509 //-V2014
+   9854:         }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\program files\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  5 2024 18:59:21, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 05 2024 18:59:28
+
+Run file:	D:\loj\2 Seria\bin\Debug\2 Seria.exe
+Directory:	D:\loj\2 Seria
+
+--------------------------------------------------
